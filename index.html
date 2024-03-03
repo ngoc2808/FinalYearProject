@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!--Monteserrat-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    
+
+
+    <!--Material Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custome Css-->
+    <link rel="stylesheet" href="css/styles.css">
+    
+  </head>
+  <body>
+
+    <div class="grid-container">
+
+      <!--Header-->
+      <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+          <span class="material-icons-outlined">search</span>
+        </div>
+        <div class="header-right">
+          <span class="material-icons-outlined">notifications</span>
+            <span class="material-icons-outlined">mail</span>
+              <span class="material-icons-outlined">account_circle</span> 
+        </div>
+      </header>
+
+      <!--End header-->
+
+      <!--Sidebar-->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span class="material-icons-outlined">admin_panel_settings</span> Admin Wedsite
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined">dashboard</span> Dashboard
+          </li>
+          
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined">group</span> Doctors
+          </li>
+      
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined">person</span> Patient
+          </li>
+          <a href="approveCanSchedule.html">
+            <li class="sidebar-list-item">
+              <span class="material-icons-outlined">check</span> Approve Cancellation Schedule
+            </li>
+            </a>
+          <a href="inforDoctor.html">
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined">verified_user</span> Verify Account
+          </li>
+          </a>
+          <a href="confirmSchedule.html">
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined">check</span> Confirm Schedule
+          </li>
+          </a>
+          <a href="login.html">
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined">logout</span> Logout
+          </li>
+          </a>
+        </ul>
+      </aside>
+      <!--End sidebar-->
+
+      <!--Main-->
+      <main class="main-container">
+        <div class="main-title">
+          <p class="font-weight-bold">DASHBOARD</p>
+        </div>
+
+        <div class="main-cards">
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">DOCTORS</p>
+              <span class="material-icons-outlined text-blue">group</span>
+            </div>
+            <span id="doctorCount" class="text-primary font-weight-bold"></span>
+          </div>
+
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">PATIENT</p>
+              <span class="material-icons-outlined text-orange">person</span>
+            </div>
+            <span class="text-primary font-weight-bold">83</span>
+          </div>
+
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">CONFIRM SCHEDULE</p>
+              <span class="material-icons-outlined text-green">check</span> 
+            </div>
+            <span class="text-primary font-weight-bold">29</span>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">VERIFY ACCOUNT</p>
+              <span class="material-icons-outlined text-red">verified_user</span>
+            </div>
+            <span class="text-primary font-weight-bold">56</span>
+          </div>
+        </div>
+        <div class="charts">
+          <div class="charts-card">
+            <p class="chart-title">Top Doctors</p>
+            <div id="bar-chart"></div>
+          </div>
+          <div class="charts-card">
+            <p class="chart-title">Number of patient appointments and cancellations</p>
+            <div id="area-chart"></div>
+          </div>
+        </div>
+      </main>
+      <!--End Main-->
+    </div>
+    <!--Scripts-->
+    <!--ApexCharts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.0/apexcharts.min.js" ></script>
+    <!-- Custome js-->
+        <script src="js/scripts.js"> </script>
+    <!--Link page-->
+    <a href="inforDoctor.html"></a>
+  </body>
+</html>
